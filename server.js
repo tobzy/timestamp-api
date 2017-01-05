@@ -1,9 +1,24 @@
 var express = require("express");
+var sass = require("node-sass-middleware");
+var path= require("path");
 
 var app = express();
 
+app.use(
+    sass({
+        src: __dirname + '/src/sass',
+        dest: __dirname + '/public/css',
+        debug: true,
+        outputStyle: 'expanded'
+    }
+    )
+);
+
+app.use(express.static(path.join(__dirname, 'public/views')));
+app.use(express.static(path.join(__dirname, 'public/css')));
+
 app.get('/',function(req, res) {
-    res.send('my timestamp service');
+    res.sendFile('index.html');
 })
 
 app.get('/:date', function(req, res) {

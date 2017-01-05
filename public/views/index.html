@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = 'utf8'>
+        <meta name = 'author' content="Tobe">
+        <title>Timestamp Microservice</title>
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+    </head>
+    <body class='content'>
+        <header class='container'>
+            <h1 class='title'>Timestamp Microservice</h1>
+            <h6 class='subtitle'>By Tobe.</h6>
+        </header>
+        <main class='container'>
+            <section class="card">
+                <div class="card-header">
+                    <p class='card-header-title'>What It Does..</p>
+                </div>
+                <div class="card-content">
+                     <ul>
+                    <li>
+                        I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)
+                    </li> 
+                    <li>
+                        If it does, it returns both the Unix timestamp and the natural language form of that date.
+                    </li>
+                    <li>
+                        If it does not contain a date or Unix timestamp, it returns null for those properties.
+                    </li>
+                </ul>
+                </div>
+               
+            </section>
+            <section class = 'card'>
+                <div class='card-header'>
+                <p class='card-header-title'>Example Usage</p>
+                </div>
+                <pre class='highlight card-content'>
+                    https://the-time-stamp-microservice.herokuapp.com/December%2015,%202015
+                </pre>
+                <pre class='highlight card-content'>
+                    https://the-time-stamp-microservice.herokuapp.com/1450137600
+                </pre>
+            </section>
+             <section class='card'>
+                 <div class='class-header'>
+                <p class='card-header-title'>Example Output</p>
+                </div>
+                <pre class='highlight card=content'>
+                    <code class='language-html'>
+                        {
+                            "unix": 1450137600, 
+                            "natural": "December 15, 2015" 
+                        }
+                    </code>
+                </pre>
+               
+            </section>
+        </main>
+        
+        
+    </body>
+</html>
